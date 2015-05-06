@@ -3,7 +3,11 @@
 
 #include "Tour.h"
 
+class TourAttaque : public Tour {
 
-class TourAttaque : public Tour {};
+public:
+    virtual Balle* tirerBalle();
+
+};
 
 #endif // TourAttaque_h

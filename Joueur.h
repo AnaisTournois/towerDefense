@@ -3,36 +3,25 @@
 
 #include <vector>
 
-#include "Point.h"
+#include "Cellule.h"
 #include "TourAttaque.h"
 #include "TourRalentissante.h"
-
-class Tour;
-class Jeu;
 
 class Joueur {
 
  public:
-
-    virtual poserTour(Point point, TourAttaque tour);
-
-    virtual void poserTour(Point point, TourRalentissante tour);
-
- public:
-    int argent;
+    virtual void poserTour(Cellule* cellule, Tour* tour);
+     void setPoints(int points);
+     int getPoints() const;
+     void setId(int id);
+     int getId() const;
+     void setArgent(int argent);
+     int getArgent() const;
 
  protected:
+    int argent;
     int id;
     int points;
-
- public:
-
-    /**
-     * @element-type Tour
-     */
-    std::vector< Tour* > appartient à;
-
-    Jeu *participe à;
 };
 
 #endif // Joueur_h

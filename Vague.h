@@ -2,34 +2,23 @@
 #define Vague_h
 
 #include <vector>
-
 #include "Monstre.h"
 
-class Jeu;
+using namespace std;
 
 class Vague {
 
  public:
-
     virtual void lancer();
+     void setMonstres(vector<Monstre*> monstres);
+     vector<Monstre*> getMonstres() const;
+     void setNiveau(int niveau);
+     int getNiveau() const;
 
 
  protected:
     int niveau;
-
- public:
-
-    /**
-     * @element-type Monstre
-     */
-    Monstre myMonstre;
-
-    Jeu *déclenche;
-
-    /**
-     * @element-type Monstre
-     */
-    std::vector< Monstre* > est composée de;
+    vector< Monstre* > monstres;
 };
 
 #endif // Vague_h

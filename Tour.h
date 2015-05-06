@@ -5,14 +5,28 @@
 
 #include "ElementCombattant.h"
 #include "ElementVisuel.h"
-
-class Joueur;
-class Balle;
+#include "Balle.h"
 
 class Tour : public ElementVisuel, public ElementCombattant {
 public:
 
-    virtual void tirerBalle() = 0;
+    virtual Balle* tirerBalle() = 0;
+
+    void setProprietaire(Joueur* proprietaire) {
+        this->proprietaire = proprietaire;
+    }
+
+    Joueur* getProprietaire() const {
+        return proprietaire;
+    }
+
+    void setPrix(int prix) {
+        this->prix = prix;
+    }
+
+    int getPrix() const {
+        return prix;
+    }
 
 protected:
     int prix;
