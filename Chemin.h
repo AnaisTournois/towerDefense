@@ -4,7 +4,14 @@
 #include <vector>
 #include "Cellule.h"
 
+using namespace std;
+
 class Chemin {
+    
+ private:
+    std::vector<Cellule*> chemin;
+    Cellule* depart;
+    Cellule* arrivee;
 
 public:
     Chemin();
@@ -34,11 +41,6 @@ public:
         return chemin;
     }
     
-    
- private:
-    std::vector<Cellule*> chemin;
-    Cellule* depart;
-    Cellule* arrivee;
 
 };
 

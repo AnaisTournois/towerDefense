@@ -8,6 +8,8 @@
 #ifndef CELLULE_H
 #define	CELLULE_H
 
+using namespace std;
+
 class Cellule {
     
 public:

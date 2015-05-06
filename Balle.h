@@ -5,6 +5,8 @@
 #include "Monstre.h"
 #include "Tour.h"
 
+using namespace std;
+
 class Balle : public ElementDynamique {
 public:
     virtual void toucherMonstre(Monstre monstre) = 0;
@@ -25,6 +27,8 @@ public:
         return puissance;
     }
 
+    void toucheMonstre(Monstre monstre);
+    
 protected:
     int puissance;
     Tour* tourLanceuse;

@@ -2,36 +2,31 @@
 #define Jeu_h
 
 #include <vector>
+#include "Joueur.h"
+#include "Vague.h"
 
-
-class Joueur;
-class Vague;
+using namespace std;
 
 class Jeu {
-
- public:
-
-    virtual void lancer();
-
-    virtual void arreter();
-
-    virtual void terminer();
-
-
- protected:
+protected:
     bool etat;
+    
+public:
+    vector<Joueur*> joueurs;
+    vector<Vague*> vagues;
+    
+public:
+    virtual void lancer();
+    virtual void arreter();
+    virtual void terminer();
+    void setVagues(vector<Vague*> vagues);
+    vector<Vague*> getVagues() const;
+    void setJoueurs(vector<Joueur*> joueurs);
+    vector<Joueur*> getJoueurs() const;
+    void setEtat(bool etat);
+    bool isEtat() const;
 
- public:
 
-    /**
-     * @element-type Joueur
-     */
-    std::vector< Joueur* > participe à;
-
-    /**
-     * @element-type Vague
-     */
-    std::vector< Vague* > déclenche;
 };
 
 #endif // Jeu_h

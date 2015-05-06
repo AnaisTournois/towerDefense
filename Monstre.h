@@ -5,37 +5,27 @@
 
 #include "ElementCombattant.h"
 #include "ElementDynamique.h"
+#include "Vague.h"
+#include "Chemin.h"
+#include "Balle.h"
 
-class Vague;
-class Chemin;
-class Balle;
+using namespace std;
 
 class Monstre : public ElementDynamique, public ElementCombattant {
-
+    
+ protected:
+    Vague* vague;
+    Chemin* cheminSuivi;
+    
+    
  public:
-
     virtual void attaquerTour();
-
     virtual void mourir();
+    void setCheminSuivi(Chemin* cheminSuivi);
+    Chemin* getCheminSuivi() const;
+    void setVague(Vague* vague);
+    Vague* getVague() const;
 
- public:
-
-    /**
-     * @element-type Vague
-     */
-    Vague *myVague;
-
-    /**
-     * @element-type Vague
-     */
-    std::vector< Vague* > est composée de;
-
-    Chemin *suit;
-
-    /**
-     * @element-type Balle
-     */
-    std::vector< Balle* > touche;
 };
 
 #endif // Monstre_h

@@ -3,6 +3,7 @@
 
 #include "Balle.h"
 
+using namespace std;
 
 class BalleAttaque : public Balle {
 
