@@ -10,7 +10,7 @@ class Balle : public ElementDynamique {
 public:
     virtual void toucherMonstre(Monstre monstre) = 0;
 
-    // commentaire
+    // commentaire Anaïs
     
 protected:
     int puissance;
