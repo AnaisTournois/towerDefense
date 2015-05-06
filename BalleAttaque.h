@@ -4,6 +4,11 @@
 #include "Balle.h"
 
 
-class BalleAttaque : public Balle {};
+class BalleAttaque : public Balle {
+
+public:
+    virtual void toucherMonstre(Monstre monstre);
+    
+};
 
 #endif // BalleAttaque_h

@@ -4,6 +4,22 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Balle.h</itemPath>
+      <itemPath>BalleAttaque.h</itemPath>
+      <itemPath>BalleRalentissante.h</itemPath>
+      <itemPath>Cellule.h</itemPath>
+      <itemPath>Chemin.h</itemPath>
+      <itemPath>ElementCombattant.h</itemPath>
+      <itemPath>ElementDynamique.h</itemPath>
+      <itemPath>ElementVisuel.h</itemPath>
+      <itemPath>Jeu.h</itemPath>
+      <itemPath>Joueur.h</itemPath>
+      <itemPath>Monstre.h</itemPath>
+      <itemPath>Point.h</itemPath>
+      <itemPath>Tour.h</itemPath>
+      <itemPath>TourAttaque.h</itemPath>
+      <itemPath>TourRalentissante.h</itemPath>
+      <itemPath>Vague.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +28,24 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Balle.cpp</itemPath>
+      <itemPath>BalleAttaque.cpp</itemPath>
+      <itemPath>BalleRalentissante.cpp</itemPath>
+      <itemPath>Cellule.cpp</itemPath>
+      <itemPath>Chemin.cpp</itemPath>
+      <itemPath>ElementCombattant.cpp</itemPath>
+      <itemPath>ElementDynamique.cpp</itemPath>
+      <itemPath>ElementVisuel.cpp</itemPath>
+      <itemPath>Jeu.cpp</itemPath>
+      <itemPath>Joueur.cpp</itemPath>
+      <itemPath>Main.cpp</itemPath>
+      <itemPath>Monstre.cpp</itemPath>
+      <itemPath>Point.cpp</itemPath>
+      <itemPath>Tour.cpp</itemPath>
+      <itemPath>TourAttaque.cpp</itemPath>
+      <itemPath>TourRalentissante.cpp</itemPath>
+      <itemPath>Vague.cpp</itemPath>
+      <itemPath>Virage.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -35,7 +69,78 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
+      <item path="Balle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Balle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BalleAttaque.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BalleAttaque.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BalleRalentissante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BalleRalentissante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Cellule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cellule.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Chemin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Chemin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementCombattant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementCombattant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementDynamique.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementDynamique.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementVisuel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementVisuel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Jeu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Jeu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Joueur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Joueur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Monstre.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Monstre.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tour.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tour.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TourAttaque.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TourAttaque.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TourRalentissante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TourRalentissante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vague.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vague.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Virage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -58,6 +163,74 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Balle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Balle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BalleAttaque.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BalleAttaque.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BalleRalentissante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BalleRalentissante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Cellule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cellule.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Chemin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Chemin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementCombattant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementCombattant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementDynamique.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementDynamique.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ElementVisuel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ElementVisuel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Jeu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Jeu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Joueur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Joueur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Monstre.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Monstre.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tour.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tour.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TourAttaque.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TourAttaque.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TourRalentissante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TourRalentissante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vague.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vague.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Virage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

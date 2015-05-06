@@ -2,40 +2,20 @@
 #define Chemin_h
 
 #include <vector>
-
-#include "Point.h"
-#include "Virage.h"
-
-class Monstre;
+#include "Cellule.h"
 
 class Chemin {
 
- public:
+public:
+    Chemin();
+    ajouterCellule();
+    
+    
+ private:
+    std::vector<Cellule*> chemin;
+    Cellule* depart;
+    Cellule* arrivee;
 
-    /**
-     * @element-type Monstre
-     */
-    std::vector< Monstre* > suit;
-
-    /**
-     * @element-type Virage
-     */
-    Virage myVirage;
-
-    /**
-     * @element-type Virage
-     */
-    Virage myVirage;
-
-    /**
-     * @element-type Point
-     */
-    Point myPoint;
-
-    /**
-     * @element-type Point
-     */
-    Point myPoint;
 };
 
 #endif // Chemin_h

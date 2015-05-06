@@ -9,23 +9,14 @@
 class Joueur;
 class Balle;
 
-class Tour : public ElementVisuel, public ElementVisuel, public ElementCombattant {
+class Tour : public ElementVisuel, public ElementCombattant {
+public:
 
- public:
+    virtual void tirerBalle() = 0;
 
-    virtual void tirerBalle()  = 0;
-
- public:
+protected:
     int prix;
-
- public:
-
-    Joueur *appartient à;
-
-    /**
-     * @element-type Balle
-     */
-    std::vector< Balle* > tire;
+    Joueur* proprietaire;
 };
 
 #endif // Tour_h

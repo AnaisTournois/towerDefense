@@ -6,13 +6,9 @@
 
 class ElementVisuel {
 
-
  protected:
     float rayon;
-
- public:
-
-    Point se situe à;
+    Point* position;
 };
 
 #endif // ElementVisuel_h

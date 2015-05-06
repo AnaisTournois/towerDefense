@@ -1,38 +1,32 @@
 #ifndef Point_h
 #define Point_h
 
-class ElementVisuel;
-class Chemin;
-class Virage;
-
 class Point {
 
+public:
+    Point(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+    
+    int getX() {
+        return x;
+    }
+    int setX(int x) {
+        this->x = x;
+    }
+    
+    int getY() {
+        return y;
+    }
+    int setY(int y) {
+        this->y = y;
+    }
 
  protected:
-    int abscisse;
-    int ordonnee;
+    int x;
+    int y;
 
- public:
-
-    /**
-     * @element-type ElementVisuel
-     */
-    ElementVisuel *se situe à;
-
-    /**
-     * @element-type Chemin
-     */
-    Chemin *myChemin;
-
-    /**
-     * @element-type Chemin
-     */
-    Chemin *myChemin;
-
-    /**
-     * @element-type Virage
-     */
-    Virage *myVirage;
 };
 
 #endif // Point_h
