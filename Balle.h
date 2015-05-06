@@ -5,12 +5,14 @@
 #include "Monstre.h"
 #include "Tour.h"
 
-class Balle : public ElementDynamique{
+class Balle : public ElementDynamique {
     //Attributs
- public:
-    virtual void toucherMonstre(Monstre monstre)  = 0;
+public:
+    virtual void toucherMonstre(Monstre monstre) = 0;
+
+    // commentaire
     
- protected:
+protected:
     int puissance;
     Tour* tourLanceuse;
 };
