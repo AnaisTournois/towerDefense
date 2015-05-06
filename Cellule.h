@@ -14,16 +14,14 @@ public:
     Cellule(int x, int y);
     ~Cellule();
     
-    int getX();
-    int setX(int x);
-    
-    int getY();
-    int setY(int y);
+    void SetY(int y);
+    int GetY() const;
+    void SetX(int x);
+    int GetX() const;
     
 private:
     int x;
-    int y;
-    
+    int y;    
 };
 
 #endif	/* CELLULE_H */

@@ -6,12 +6,25 @@
 #include "Tour.h"
 
 class Balle : public ElementDynamique {
-    //Attributs
 public:
     virtual void toucherMonstre(Monstre monstre) = 0;
 
-    // commentaire Anaïs
-    
+    void setTourLanceuse(Tour* tourLanceuse) {
+        this->tourLanceuse = tourLanceuse;
+    }
+
+    Tour* getTourLanceuse() const {
+        return tourLanceuse;
+    }
+
+    void setPuissance(int puissance) {
+        this->puissance = puissance;
+    }
+
+    int getPuissance() const {
+        return puissance;
+    }
+
 protected:
     int puissance;
     Tour* tourLanceuse;

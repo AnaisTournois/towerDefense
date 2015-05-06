@@ -5,6 +5,22 @@ Cellule::Cellule(int x, int y) {
     this->y = y;
 }
 
+void Cellule::SetY(int y) {
+    this->y = y;
+}
+
+int Cellule::GetY() const {
+    return y;
+}
+
+void Cellule::SetX(int x) {
+    this->x = x;
+}
+
+int Cellule::GetX() const {
+    return x;
+}
+
 int Cellule::getX() {
     return x;
 }
