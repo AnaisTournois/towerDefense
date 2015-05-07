@@ -14,7 +14,7 @@ protected:
     Tour* tourLanceuse;
 
 public:
-    virtual void toucherMonstre(Monstre monstre) = 0;
+    virtual void toucherMonstre(Monstre* monstre) = 0;
 
     Tour* getTourLanceuse() const {
         return tourLanceuse;

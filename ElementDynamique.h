@@ -8,27 +8,50 @@ using namespace std;
 class ElementDynamique : public ElementVisuel {
     
 protected:
-    float vitesse;
-    float angle;
-    
+
+    Point vitesse;
+    float rotation;
+    float echelle;
+
 public:
-    virtual void avancerUnPas()  = 0;
+    /// Contructor / Destructor :
+    ///--------------------------
+    ElementDynamique(const Point& vitesse, const float& rotation, const float& echelle,
+            const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
 
-    void setAngle(float angle) {
-        this->angle = angle;
-    }
+    // Assignation :
+    //--------------
+//    virtual const ElementDynamique &operator=( const ElementDynamique& elementDynamique );
 
-    float getAngle() const {
-        return angle;
-    }
+    // Comparaison      :
+    //------------------
+    virtual bool operator==( const ElementDynamique& elementDynamique );
 
-    void setVitesse(float vitesse) {
+    /// Process Dynamiq :
+    ///------------------
+    virtual void avancerUnPas(float temps);
+
+    /// Getter / Setter :
+    ///------------------
+    void setVitesse(Point vitesse) {
         this->vitesse = vitesse;
     }
-
-    float getVitesse() const {
+    Point getVitesse() const {
         return vitesse;
-    } 
+    }
+    void setRotation(float rotation) {
+        this->rotation = rotation;
+    }
+    float getRotation() const {
+        return rotation;
+    }
+    void setEchelle(float echelle) {
+        this->echelle = echelle;
+    }
+    float getEchelle() const {
+        return echelle;
+    }
+
 };
 
 #endif // ElementDynamique_h
