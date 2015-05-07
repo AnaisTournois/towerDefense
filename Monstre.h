@@ -1,15 +1,11 @@
 #ifndef Monstre_h
 #define Monstre_h
 
-#include <vector>
-
 #include "ElementCombattant.h"
 #include "ElementDynamique.h"
 #include "Vague.h"
 #include "Chemin.h"
 #include "Balle.h"
-
-using namespace std;
 
 class Monstre : public ElementDynamique, public ElementCombattant {
     
@@ -17,8 +13,8 @@ class Monstre : public ElementDynamique, public ElementCombattant {
     Vague* vague;
     Chemin* cheminSuivi;
     
-    
  public:
+    virtual void avancerUnPas();
     virtual void attaquerTour();
     virtual void mourir();
     void setCheminSuivi(Chemin* cheminSuivi);

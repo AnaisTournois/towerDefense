@@ -6,6 +6,7 @@
 using namespace std;
 
 class ElementDynamique : public ElementVisuel {
+    
 protected:
     float vitesse;
     float angle;
