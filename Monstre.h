@@ -14,7 +14,6 @@ class Monstre : public ElementDynamique, public ElementCombattant {
     virtual void avancerUnPas();
     virtual void attaquerTour();
     virtual void mourir();
-    void setCheminSuivi(Chemin* cheminSuivi);
     Chemin* getCheminSuivi() const;
 
 };

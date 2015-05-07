@@ -15,7 +15,7 @@ class Chemin {
 
 public:
     Chemin();
-    ajouterCellule();
+    void ajouterCellule(Cellule* celulle);
 
     void setArrivee(Cellule* arrivee) {
         this->arrivee = arrivee;

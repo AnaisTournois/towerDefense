@@ -4,13 +4,14 @@
 #include <vector>
 
 #include "Cellule.h"
-#include "TourAttaque.h"
-#include "TourRalentissante.h"
+#include "Tour.h"
+
+class Tour;
 
 class Joueur {
 
  public:
-    virtual void poserTour(Cellule* cellule, Tour* tour);
+     void poserTour(Cellule* cellule, Tour* tour);
      void setPoints(int points);
      int getPoints() const;
      void setId(int id);

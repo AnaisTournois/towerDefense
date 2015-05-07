@@ -2,6 +2,9 @@
 #define TourAttaque_h
 
 #include "Tour.h"
+#include "Balle.h"
+
+class Balle;
 
 class TourAttaque : public Tour {
 

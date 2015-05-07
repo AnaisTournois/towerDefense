@@ -8,7 +8,8 @@ using namespace std;
 class BalleRalentissante : public Balle {
 
 public:
-    virtual void toucherMonstre(Monstre monstre);
+    BalleRalentissante(Tour* tourLanceuse);
+    virtual void toucherMonstre(Monstre* monstre);
     
 };
 
