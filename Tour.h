@@ -6,8 +6,9 @@
 #include "ElementCombattant.h"
 #include "ElementVisuel.h"
 #include "Balle.h"
+#include "ObjetTangible.h"
 
-class Tour : public ElementVisuel, public ElementCombattant {
+class Tour : public ElementCombattant, public ObjetTangible {
 public:
 
     virtual Balle* tirerBalle() = 0;

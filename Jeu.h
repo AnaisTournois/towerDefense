@@ -4,6 +4,7 @@
 #include <vector>
 #include "Joueur.h"
 #include "Vague.h"
+#include "ObjetTangible.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ public:
     vector<Joueur*> getJoueurs() const;
     void setEtat(bool etat);
     bool isEtat() const;
+    ObjetTangible* detecterObjetTangible();
 
 
 };
