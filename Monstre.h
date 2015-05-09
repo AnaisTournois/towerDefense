@@ -1,11 +1,12 @@
 #ifndef Monstre_h
 #define Monstre_h
 
-#include "ElementCombattant.h"
 #include "ElementDynamique.h"
+#include "ElementCombattant.h"
 #include "Chemin.h"
+#include "Tour.h"
 
-class Monstre : public ElementDynamique, public ElementCombattant {
+class Monstre : public mia::ElementDynamique, public ElementCombattant {
     
  protected:
     Chemin* cheminSuivi;
@@ -16,7 +17,7 @@ class Monstre : public ElementDynamique, public ElementCombattant {
              const Point& vitesse = Point(0,0), const float& rotation =0.f, const float& echelle = 0.f,
              const int pointsDeVie = 10, const int attaque = 1, const int defense = 0, const float frequence = 1.0f);
     virtual void avancerUnPas();
-    virtual void attaquerTour();
+    virtual void attaquerTour(Tour* tour);
     virtual void mourir();
     Chemin* getCheminSuivi() const;
 

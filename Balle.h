@@ -1,13 +1,14 @@
 #ifndef Balle_h
 #define Balle_h
 
-//#include "ElementDynamique.h"
-#include "Monstre.h"
+#include "ElementDynamique.h"
 #include "Tour.h"
 
 using namespace std;
 
-class Balle : public ElementDynamique {
+class Monstre;
+
+class Balle : public mia::ElementDynamique{
 
 protected:
     int puissance;

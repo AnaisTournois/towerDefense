@@ -4,6 +4,8 @@
 #include "ElementVisuel.h"
 
 using namespace std;
+using namespace mia;
+namespace mia {
 
 class ElementDynamique : public ElementVisuel {
     
@@ -16,8 +18,12 @@ protected:
 public:
     /// Contructor / Destructor :
     ///--------------------------
+    ElementDynamique();
+    
     ElementDynamique(const Point& vitesse, const float& rotation, const float& echelle,
             const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
+    
+    ElementDynamique(Point position, float angle, float& rayon, bool solide, bool mobile);
 
     // Assignation :
     //--------------
@@ -52,6 +58,7 @@ public:
         return echelle;
     }
 
+};
 };
 
 #endif // ElementDynamique_h

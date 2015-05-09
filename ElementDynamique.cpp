@@ -18,14 +18,20 @@
  */
 
 #include "ElementDynamique.h"
+
+
 /// Contructor / Destructor :
 ///--------------------------
+ElementDynamique::ElementDynamique(){}
+
 
 ElementDynamique::ElementDynamique(const Point& vitesse, const float& rotation, const float& echelle,
             const Point& position, const float& angle, const float& rayon, bool solide, bool mobile):
             ElementVisuel( position, angle, rayon, solide, mobile ),
             vitesse(vitesse), rotation(rotation), echelle(echelle) {
 }
+
+ElementDynamique::ElementDynamique(Point position, float angle, float& rayon, bool solide, bool mobile){}
 
 bool ElementDynamique::operator==( const ElementDynamique& elementDynamique ) {
     return ( this == &elementDynamique );

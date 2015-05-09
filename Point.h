@@ -25,7 +25,7 @@
 #include <iostream>
 #include <assert.h>
 #include <math.h>
-
+namespace mia{
 /// 2 dimention floating number.
 class Point
 {
@@ -407,6 +407,7 @@ inline std::ostream & operator<< ( std::ostream & os, const Point & v )
 {
     os << "(" << v.x << ", " << v.y << ")";
     return os;
+}
 }
 
 #endif // POINT_H

@@ -5,7 +5,7 @@ Monstre::Monstre(
         bool solide, bool mobile,
         const Point& vitesse, const float& rotation, const float& echelle,
         const int pointsDeVie, const int attaque, const int defense, const float frequence):
-    ElementDynamique(vitesse, rotation, echelle, position, angle, rayon, solide, mobile),
+    mia::ElementDynamique(vitesse, rotation, echelle, position, angle, rayon, solide, mobile),
     ElementCombattant(pointsDeVie, attaque, defense, frequence),
     cheminSuivi(cheminSuivi)
 {
@@ -39,7 +39,7 @@ void Monstre::avancerUnPas() {
 
 }
 
-void Monstre::attaquerTour() {
+void Monstre::attaquerTour(Tour* tour) {
 }
 
 void Monstre::mourir() {

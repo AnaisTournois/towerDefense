@@ -4,8 +4,8 @@
 #include "Point.h"
 
 using namespace std;
+using namespace mia;
 
-class Point;
 
 class ElementVisuel {
     
@@ -18,6 +18,8 @@ protected:
     bool mobile;
     
 public:
+    ElementVisuel();
+    
     ElementVisuel(const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
     void setPosition(Point position) {
         this->position = position;
@@ -37,6 +39,8 @@ public:
     float getRayon() const {
         return rayon;
     }
+    
+    
 
     void setSolide(bool solide) {
         this->solide = solide;
