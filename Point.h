@@ -29,13 +29,16 @@ namespace mia{
 /// 2 dimention floating number.
 class Point
 {
-public :
+//protected :
+public:
 
     // Attributes :
     //-------------
     float x; /// x coordinate.
     float y; /// y coordinate.
 
+public:
+    
     // constructor :
     //--------------
     inline Point():x(0.0f),y(0.0f) {}
@@ -329,6 +332,22 @@ public :
         Point X( cos( -angle ), sin( -angle ) );
         Point Y( -X.y, X.x );
         return X * (x - refPoint.x) + Y * (y - refPoint.y);
+    }
+
+    void setY(float y) {
+        this->y = y;
+    }
+
+    float getY() const {
+        return y;
+    }
+
+    void setX(float x) {
+        this->x = x;
+    }
+
+    float getX() const {
+        return x;
     }
 
 };

@@ -51,7 +51,7 @@ bool World :: initialize( mia::Int2 size, bool close)
     if( close )
     {
         Point C( (float)size.x - 0.01f, (float)size.y - 0.01f );
-        Point A(0.01f), B(A.x, C.y), D(C.x, A.y);
+        Point A(0.01f), B(A.getX(), C.getY()), D(C.getX(), A.getY());
 
         createWall( A, B);
         createWall( B, C);
@@ -187,26 +187,26 @@ void World :: process(float dTime)
             }
 
         // World limits :
-        if ( a_body[iBody].shape.getPosition().x < a_body[iBody].shape.getAngle() )
+        if ( a_body[iBody].shape.getPosition().getX() < a_body[iBody].shape.getAngle() )
         {
-            a_body[iBody].shape.getPosition().x= a_body[iBody].shape.getAngle();
-            a_body[iBody].shape.getVitesse().x= 0.f; //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.getPosition().setX(a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().x > ( (float)worldSize.x - a_body[iBody].shape.getAngle() ) )
+        else if ( a_body[iBody].shape.getPosition().getX() > ( (float)worldSize.x - a_body[iBody].shape.getAngle() ) )
         {
-            a_body[iBody].shape.getPosition().x= (float)worldSize.x - a_body[iBody].shape.getAngle();
-            a_body[iBody].shape.getVitesse().x= 0.f; //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.getPosition().setX((float)worldSize.x - a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
-        if ( a_body[iBody].shape.getPosition().y < a_body[iBody].shape.getAngle() )
+        if ( a_body[iBody].shape.getPosition().getY() < a_body[iBody].shape.getAngle() )
         {
-            a_body[iBody].shape.getPosition().y= a_body[iBody].shape.getAngle();
-            a_body[iBody].shape.getVitesse().y= 0.f; //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.getPosition().setY(a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().y > ( (float)worldSize.y - a_body[iBody].shape.getAngle() ) )
+        else if ( a_body[iBody].shape.getPosition().getY() > ( (float)worldSize.y - a_body[iBody].shape.getAngle() ) )
         {
-            a_body[iBody].shape.getPosition().y= (float)worldSize.y - a_body[iBody].shape.getAngle();
-            a_body[iBody].shape.getVitesse().y= 0.f; //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.getPosition().setY((float)worldSize.y - a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
         // reset in grid :
@@ -220,9 +220,9 @@ int World :: createBody( const ElementDynamique & shape, float pr)
     int idBody= a_body.push( Body(shape, pr) );
 
     if( shape.isMobile() )
-        a_grid[(int)(shape.getPosition().x)][(int)(shape.getPosition().y)].a_mobileBody.push_back( idBody );
+        a_grid[(int)(shape.getPosition().getX())][(int)(shape.getPosition().getY())].a_mobileBody.push_back( idBody );
     else
-        a_grid[(int)(shape.getPosition().x)][(int)(shape.getPosition().y)].a_fixedBody.push_back( idBody );
+        a_grid[(int)(shape.getPosition().getX())][(int)(shape.getPosition().getY())].a_fixedBody.push_back( idBody );
 
     return idBody;
 }
