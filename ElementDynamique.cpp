@@ -31,7 +31,7 @@ ElementDynamique::ElementDynamique(const Point& vitesse, const float& rotation, 
             vitesse(vitesse), rotation(rotation), echelle(echelle) {
 }
 
-ElementDynamique::ElementDynamique(Point position, float angle, float& rayon, bool solide, bool mobile){}
+//ElementDynamique::ElementDynamique(Point position, float angle, float rayon, bool solide, bool mobile){}
 
 bool ElementDynamique::operator==( const ElementDynamique& elementDynamique ) {
     return ( this == &elementDynamique );

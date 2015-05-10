@@ -233,7 +233,8 @@ int World :: createWall(const Point p1, const Point p2, float radius, float rati
     float dist= step.normalize();
     int nbBody= (int)( dist / (radius*ratio) );
     step*= dist / (float)nbBody;
-    ElementDynamique shape(p1 + step*0.5f, step.angle(), radius, true, false);
+    ElementDynamique shape(0.f, 0.f, 0.f,p1 + step*0.5f, step.angle(), radius, true, false);
+    //ElementDynamique shape(p1 + step*0.5f, step.angle(), radius, true, false);
 
     for(int i= 0; i < nbBody; ++i)
     {

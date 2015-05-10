@@ -23,7 +23,7 @@ public:
     ElementDynamique(const Point& vitesse, const float& rotation, const float& echelle,
             const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
     
-    ElementDynamique(Point position, float angle, float& rayon, bool solide, bool mobile);
+    //ElementDynamique(Point position, float angle, float rayon, bool solide, bool mobile);
 
     // Assignation :
     //--------------
