@@ -20,25 +20,23 @@
 #ifndef MIA_POINT_H
 #define MIA_POINT_H
 
-//#include "int2.h"
+#include "int2.h"
 
 #include <iostream>
 #include <assert.h>
-#include <math.h>
-namespace mia{
+namespace mia
+{
+
 /// 2 dimention floating number.
 class Point
 {
-//protected :
-public:
+public :
 
     // Attributes :
     //-------------
     float x; /// x coordinate.
     float y; /// y coordinate.
 
-public:
-    
     // constructor :
     //--------------
     inline Point():x(0.0f),y(0.0f) {}
@@ -64,9 +62,9 @@ public:
     }
 
     // Convertion
-//    inline operator Int2() {
-//        return Int2( (int)x, (int)y );
-//    }
+    inline operator Int2() {
+        return Int2( (int)x, (int)y );
+    }
 
     // Equality :
     //-------------
@@ -427,6 +425,7 @@ inline std::ostream & operator<< ( std::ostream & os, const Point & v )
     os << "(" << v.x << ", " << v.y << ")";
     return os;
 }
-}
+
+};
 
 #endif // POINT_H

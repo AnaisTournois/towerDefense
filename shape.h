@@ -22,7 +22,6 @@
 
 #include "Point.h"
 
-
 namespace mia
 {
 

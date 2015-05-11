@@ -1,7 +1,9 @@
-build/Debug/MinGW-Windows/world.o: world.cpp world.h ElementDynamique.h \
- ElementVisuel.h Point.h shape.h grid.h int2.h collection.h tools.h
+build/Debug/MinGW-Windows/world.o: world.cpp world.h collection.h \
+ ElementDynamique.h ElementVisuel.h Point.h int2.h shape.h grid.h tools.h
 
 world.h:
+
+collection.h:
 
 ElementDynamique.h:
 
@@ -9,12 +11,10 @@ ElementVisuel.h:
 
 Point.h:
 
+int2.h:
+
 shape.h:
 
 grid.h:
-
-int2.h:
-
-collection.h:
 
 tools.h:

@@ -36,7 +36,7 @@ Control::Control( Frame * frame, World * target ):
 void Control::process()
 {
     SDL_Event event;
-    Couleur white( 255, 255, 255 );
+    Color white( 255, 255, 255 );
 
     Int2 mouseMove(0, 0);
     while( SDL_PollEvent( &event ) ) {

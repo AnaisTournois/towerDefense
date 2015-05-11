@@ -9,7 +9,7 @@ namespace mia {
 
 class ElementDynamique : public ElementVisuel {
     
-protected:
+public:
 
     Point vitesse;
     float rotation;
