@@ -32,10 +32,10 @@ int main(int, char**) {
     //-----------------------
     world.initialize(Int2(20, 20));
 
-    int nbAgent(10), agent[nbAgent];
-    for (int i(0); i < nbAgent; ++i) {
-        //ElementDynamique body= ElementDynamique(0.f, 0.f, 0.f,Point( randomFloat()*20.0f, randomFloat()*20.0f ), reduceRadian(randomFloat()*_2PI), 0.2);
-        ElementDynamique body = ElementDynamique(Point( randomFloat()*20.0f, randomFloat()*20.0f), 0.f, 0.f, true, true, Point( randomFloat()*20.0f, randomFloat()*20.0f), reduceRadian(randomFloat()*_2PI), 0.2);
+    int nbAgent(120), agent[nbAgent];
+    for(int i(0); i < nbAgent; ++i )
+    {
+        ElementDynamique body= ElementDynamique( Point( randomFloat()*20.0f, randomFloat()*20.0f ), reduceRadian(randomFloat()*_2PI), 0.2);
         body.setVitesse(Point( cos(body.getAngle()), sin(body.getAngle()) )* 3.f);
         agent[i]= world.createBody(body, 3.0f );
     }
