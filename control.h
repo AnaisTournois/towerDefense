@@ -21,6 +21,7 @@
 #define CONTROL_H
 
 #include "frame.h"
+#include "DetecteurObjetTangible.h"
 
 using namespace std;
 
@@ -35,6 +36,7 @@ protected:
     World* a_target;
     bool a_end, a_pause;
     bool a_mouseControl;
+    DetecteurObjetTangible detecteur;
 
 public:
     Control( Frame* frame, World* target );
