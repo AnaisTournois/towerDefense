@@ -18,12 +18,8 @@ protected:
 public:
     /// Contructor / Destructor :
     ///--------------------------
-    ElementDynamique();
-    
-    ElementDynamique(const Point& vitesse, const float& rotation, const float& echelle,
-            const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
-    
-    //ElementDynamique(Point position, float angle, float rayon, bool solide, bool mobile);
+    ElementDynamique(const Point& position = 0.f, const float& angle = 0.f, const float& rayon = 0.f, bool solide = true, bool mobile = true,
+                     const Point& vitesse = 0.f, const float& rotation = 0.f, const float& echelle = 0.f);
 
     // Assignation :
     //--------------
