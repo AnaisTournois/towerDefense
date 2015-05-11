@@ -5,11 +5,12 @@
 
 #include "ElementCombattant.h"
 #include "ElementVisuel.h"
-#include "ObjetTangible.h"
 #include "Joueur.h"
+#include "ObjetTangible.h"
 
 class Balle;
 class Joueur;
+
 
 class Tour : public ElementCombattant, public ObjetTangible {
 public:

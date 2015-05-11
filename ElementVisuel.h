@@ -9,7 +9,7 @@ using namespace mia;
 
 class ElementVisuel {
     
-protected:
+public:
     Point position;
     float angle;
     float rayon;
@@ -20,7 +20,8 @@ protected:
 public:
     ElementVisuel();
     
-    ElementVisuel(const Point& position, const float& angle, const float& rayon, bool solide, bool mobile);
+    ElementVisuel(const Point& position = 0.f, const float& angle = 0.f, const float& rayon = 0.f, bool solide = true, bool mobile = true);
+    
     void setPosition(Point position) {
         this->position = position;
     }

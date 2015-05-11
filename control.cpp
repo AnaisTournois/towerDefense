@@ -37,11 +37,11 @@ a_mouseControl(false) {
 
 void Control::process() {
     SDL_Event event;
-    Couleur white(255, 255, 255);
-
     //Pour la détection d'objets tangibles
     int compteur = 0;
     std::vector<mia::Point> points;
+
+    Color white( 255, 255, 255 );
 
     Int2 mouseMove(0, 0);
     while (SDL_PollEvent(&event)) {

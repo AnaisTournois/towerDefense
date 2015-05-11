@@ -2,7 +2,7 @@
  * <one line to give the library's name and an idea of what it does.>
  * Copyright (C) 2015  Guillaume L. <guillaume.lozenguez@mines-douai.fr>
  *
- * This program is free software: you can rougeistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -33,8 +33,8 @@ Frame::Frame(const char * name, int size_x, int size_y ):
     a_renderer(0),
     a_sdlOk(true),
     // Drawing :
-    a_bgCouleur(0x202020FF),
-    a_penCouleur(0xA0A0A0FF)
+    a_bgColor(0x202020FF),
+    a_penColor(0xA0A0A0FF)
 {
     //  Initialize SDL 2 :
     if ( SDL_Init(SDL_INIT_VIDEO) != 0 ) {
@@ -62,11 +62,11 @@ Frame::Frame(const char * name, int size_x, int size_y ):
         a_sdlOk= false;
     }
 
-    SDL_SetRenderDrawColor(a_renderer, a_bgCouleur.rouge, a_bgCouleur.vert, a_bgCouleur.bleu, 255);//a_bgCouleur.opacite);
+    SDL_SetRenderDrawColor(a_renderer, a_bgColor.red, a_bgColor.green, a_bgColor.blue, 255);//a_bgColor.alfa);
     SDL_RenderClear(a_renderer);
     SDL_RenderPresent(a_renderer);
 
-    SDL_SetRenderDrawColor(a_renderer, a_penCouleur.rouge, a_penCouleur.vert, a_penCouleur.bleu, 255);//a_penCouleur.opacite);
+    SDL_SetRenderDrawColor(a_renderer, a_penColor.red, a_penColor.green, a_penColor.blue, 255);//a_penColor.alfa);
 }
 
 Frame::~Frame()
@@ -93,9 +93,9 @@ void Frame::refresh() {
 
     SDL_RenderPresent(a_renderer);
 
-    SDL_SetRenderDrawColor(a_renderer, a_bgCouleur.rouge, a_bgCouleur.vert, a_bgCouleur.bleu, a_bgCouleur.opacite);
+    SDL_SetRenderDrawColor(a_renderer, a_bgColor.red, a_bgColor.green, a_bgColor.blue, a_bgColor.alfa);
     SDL_RenderClear(a_renderer);
-    SDL_SetRenderDrawColor(a_renderer, a_penCouleur.rouge, a_penCouleur.vert, a_penCouleur.bleu, a_penCouleur.opacite);
+    SDL_SetRenderDrawColor(a_renderer, a_penColor.red, a_penColor.green, a_penColor.blue, a_penColor.alfa);
 }
 
 // Getters and Setters :

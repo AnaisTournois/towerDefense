@@ -52,7 +52,10 @@ const Patch* Grid :: getPatch(mia::Int2 patchId) const
 
 Patch & Grid::Column :: operator [] ( int y )
 {
-        assert( 0 <= a_x && a_x < a_grid->a_nbPatch.x && 0 <= y && y < a_grid->a_nbPatch.y );
+        assert( 0 <= a_x);
+        assert(a_x < a_grid->a_nbPatch.x);
+        assert(0 <= y);
+        assert(y < a_grid->a_nbPatch.y);
         return a_grid->a_patch[a_x][y];
 }
 

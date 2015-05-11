@@ -20,6 +20,7 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
+#include "world.h"
 #include "frame.h"
 #include "DetecteurObjetTangible.h"
 
@@ -27,25 +28,23 @@ using namespace std;
 
 namespace mia{
 
-class world;    
- 
 class Control
 {
 protected:
-    Frame* a_frame;
-    World* a_target;
+    Frame * a_frame;
+    World * a_target;
     bool a_end, a_pause;
     bool a_mouseControl;
     DetecteurObjetTangible detecteur;
 
 public:
-    Control( Frame* frame, World* target );
+    Control( Frame * frame, World * target );
     
     // Getter and Setter :
     virtual bool end() const { return a_end; }
-    virtual void setEnd(bool set){ a_end= set; }
+    virtual bool setEnd(bool set){ a_end= set; }
     virtual bool pause() const { return a_pause; }
-    virtual void setPause(bool set){ a_pause= set; }
+    virtual bool setPause(bool set){ a_pause= set; }
 
     //Process function :
     virtual void process();

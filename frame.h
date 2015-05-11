@@ -22,16 +22,13 @@
 
 #include "int2.h"
 #include "Point.h"
-#include "Couleur.h"
+#include "color.h"
 #include "world.h"
 
 #include <iostream>
 #include <stdlib.h>
 
 #include <SDL2/SDL.h>
-class Couleur;
-class World;
-
 
 namespace mia{
     
@@ -51,7 +48,7 @@ protected:
     bool a_sdlOk;
 
     // Drawing :
-    Couleur a_bgCouleur, a_penCouleur;
+    Color a_bgColor, a_penColor;
 
     // InnerTools :
     inline int X(float x)const {
@@ -78,8 +75,8 @@ public:
     void refresh();
 
     // Getters and Setters :
-    inline Couleur penCouleur()const { return a_penCouleur; };
-    inline void penCouleur(Couleur newCouleur ) { a_penCouleur= newCouleur; };
+    inline mia::Color penColor()const { return a_penColor; };
+    inline void penColor(mia::Color newColor ) { a_penColor= newColor; };
     inline float scale()const { return a_scale; };
     inline void scale(float newScale) { a_scale= newScale; };
 
@@ -100,8 +97,8 @@ public:
     void drawBasis(float unit= 1.);
     
     //MoInAg :
-    void drawGrid(const World& w);
-    void drawBodies(const World& w);
+    void drawGrid(const World & w);
+    void drawBodies(const World & w);
 
     void drawElementDynamique( const ElementDynamique & bod );
 };

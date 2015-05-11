@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ *fal
  */
 
 #include "world.h"
@@ -187,26 +187,26 @@ void World :: process(float dTime)
             }
 
         // World limits :
-        if ( a_body[iBody].shape.getPosition().x < a_body[iBody].shape.getRayon() )
+        if ( a_body[iBody].shape.position.x < a_body[iBody].shape.getRayon() )
         {
-            a_body[iBody].shape.getPosition().setX(a_body[iBody].shape.getRayon());
-            a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.position.setX(a_body[iBody].shape.getRayon());
+            a_body[iBody].shape.vitesse.setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().x > ( (float)worldSize.x - a_body[iBody].shape.getRayon() ) )
+        else if ( a_body[iBody].shape.position.x > ( (float)worldSize.x - a_body[iBody].shape.getRayon() ) )
         {
-            a_body[iBody].shape.getPosition().setX((float)worldSize.x - a_body[iBody].shape.getRayon());
-            a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.position.setX((float)worldSize.x - a_body[iBody].shape.getRayon());
+            a_body[iBody].shape.vitesse.setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
-        if ( a_body[iBody].shape.getPosition().y < a_body[iBody].shape.getRayon() )
+        if ( a_body[iBody].shape.position.y < a_body[iBody].shape.getRayon() )
         {
-            a_body[iBody].shape.getPosition().setY(a_body[iBody].shape.getRayon());
-            a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.position.setY(a_body[iBody].shape.getRayon());
+            a_body[iBody].shape.vitesse.setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().y > ( (float)worldSize.y - a_body[iBody].shape.getRayon() ) )
+        else if ( a_body[iBody].shape.position.y > ( (float)worldSize.y - a_body[iBody].shape.getRayon() ) )
         {
-            a_body[iBody].shape.getPosition().setY((float)worldSize.y - a_body[iBody].shape.getRayon());
-            a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
+            a_body[iBody].shape.position.setY((float)worldSize.y - a_body[iBody].shape.getRayon());
+            a_body[iBody].shape.vitesse.setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
         // reset in grid :
@@ -238,7 +238,7 @@ int World :: createWall(const Point p1, const Point p2, float radius, float rati
     for(int i= 0; i < nbBody; ++i)
     {
         createBody(shape);
-        shape.getPosition()+= step;
+        shape.position += step;
     }
 
     return nbBody;

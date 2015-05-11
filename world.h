@@ -20,29 +20,26 @@
 #ifndef MIA_WORLD_H
 #define MIA_WORLD_H
 
+#include "collection.h"
 #include "ElementDynamique.h"
 #include "shape.h"
 #include "grid.h"
-#include "collection.h"
 
 namespace mia{
 
 struct Body
 {
-        ElementDynamique shape;
+        mia::ElementDynamique shape;
 
         Body():shape(){}
-        Body(const ElementDynamique& s, float pr= 1.f):shape(s){}
-        Body(int o, const ElementDynamique& s, float pr= 1.f):shape(s){}
+        Body(const mia::ElementDynamique & s, float pr= 1.f):shape(s){}
+        Body(int o, const mia::ElementDynamique & s, float pr= 1.f):shape(s){}
 
         const Body & operator=(const Body & b){
                 shape= b.shape;
                 return *this;
         };
 };
-
-using namespace std;
-using namespace mia;
 
 class World
 {
@@ -70,7 +67,7 @@ public :
 
 protected :
         // World Element :
-        collection<Body> a_body;
+        mia::collection<Body> a_body;
 
         // Grid :
         //-------
@@ -90,16 +87,16 @@ public :
         // factory function :
         //-------------------
         static World * factory(int= 0){ return new World(); }
-        virtual int createBody(const ElementDynamique & body, float pr= 0.1f);
-        virtual int createWall(const Point p1, const mia::Point p2, float radius= 0.06f, float ratio= 1.90f);
+        virtual int createBody(const mia::ElementDynamique & body, float pr= 0.1f);
+        virtual int createWall(const mia::Point p1, const mia::Point p2, float radius= 0.06f, float ratio= 1.90f);
 
         // Getter / Setter :
         //------------------
-        virtual Int2 getSize() const { return a_grid.getSize(); };
+        virtual mia::Int2 getSize() const { return a_grid.getSize(); };
         virtual const Patch* getPatch( mia::Int2 patchId) const { return a_grid.getPatch( patchId ); };
-         inline virtual Circle bodyShape(int id)const
+         inline virtual mia::Circle bodyShape(int id)const
          {
-                 return Circle( a_body(id).shape.getPosition(), a_body(id).shape.getAngle() );
+                 return mia::Circle( a_body(id).shape.getPosition(), a_body(id).shape.getRayon() );
          }
 
         // Body Managment :
