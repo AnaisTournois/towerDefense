@@ -15,17 +15,25 @@ using namespace std;
 
 class ObjetTangible {
 protected:
-    vector<Point*> points;
+    vector<mia::Point> points;
 
 public:
-
-    void SetPoints(vector<Point*> points) {
+    ObjetTangible();
+    
+    ObjetTangible(vector<mia::Point> pointsObjet){
+        points = pointsObjet;
+    }
+    
+    void setPoints(vector<mia::Point> points) {
         this->points = points;
     }
 
-    vector<Point*> GetPoints() const {
+    vector<mia::Point> getPoints() const {
         return points;
     }
+    
+    void afficherPoints() const;
+    
 };
 
 

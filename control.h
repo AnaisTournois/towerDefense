@@ -22,6 +22,9 @@
 
 #include "world.h"
 #include "frame.h"
+#include "DetecteurObjetTangible.h"
+
+using namespace std;
 
 namespace mia{
 
@@ -32,6 +35,7 @@ protected:
     World * a_target;
     bool a_end, a_pause;
     bool a_mouseControl;
+    DetecteurObjetTangible detecteur;
 
 public:
     Control( Frame * frame, World * target );
