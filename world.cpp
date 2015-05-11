@@ -25,9 +25,9 @@
 
 
 //SiPlEn :
-#include "shape.h"
-#include "Point.h"
 #include "tools.h"
+#include "shape.h"
+
 // Namespace :
 using namespace std;
 using namespace mia;
@@ -51,7 +51,7 @@ bool World :: initialize( mia::Int2 size, bool close)
     if( close )
     {
         Point C( (float)size.x - 0.01f, (float)size.y - 0.01f );
-        Point A(0.01f), B(A.getX(), C.getY()), D(C.getX(), A.getY());
+        Point A(0.01f), B(A.x, C.y), D(C.x, A.y);
 
         createWall( A, B);
         createWall( B, C);
@@ -111,7 +111,7 @@ void World :: process(float dTime)
 
         // move the shape :
         Point move= bod->shape.getVitesse() * dTime;
-        bod->shape.getPosition()+= bod->shape.getVitesse() * dTime;
+        bod->shape.setPosition(bod->shape.getPosition() + bod->shape.getVitesse() * dTime);
 
         //turn :
         float angle= bod->shape.getRotation() * dTime;
@@ -124,10 +124,10 @@ void World :: process(float dTime)
         float power= ortho * bod->shape.getVitesse();
 
         // aderance : TODO : faire sa plus propre
-        bod->shape.getVitesse()-= ortho * power * dTime * 2.0f;
+        bod->shape.setVitesse(bod->shape.getVitesse() - ortho * power * dTime * 2.0f);
     }
 
-    int rand= randomInt();
+    int rand= mia::randomInt();
 
     while ( !bodyIdList.empty() )
     {
@@ -159,12 +159,12 @@ void World :: process(float dTime)
                         power= max( power, -power);
 
                         // Position :
-                        a_body[iBody].shape.getPosition()-= between * dist * 0.5f;
-                        a_body[*it2].shape.getPosition()+= between * dist * -0.5f;
+                        a_body[iBody].shape.setPosition(a_body[iBody].shape.getPosition() - between * dist * 0.5f);
+                        a_body[*it2].shape.setPosition(a_body[*it2].shape.getPosition() + between * dist * -0.5f);
 
                         // speed
-                        a_body[iBody].shape.getVitesse()-= between * power * 0.75f; // * (0.5f + rapport d'innerti); ou :
-                        a_body[*it2].shape.getVitesse()+= between * power * 0.75f; // * (0.5f + a_body[iBody].shape.a_inerti * 0.5);
+                        a_body[iBody].shape.setVitesse(a_body[iBody].shape.getVitesse() - between * power * 0.75f); // * (0.5f + rapport d'innerti); ou :
+                        a_body[*it2].shape.setVitesse( a_body[*it2].shape.getVitesse()+ between * power * 0.75f); // * (0.5f + a_body[iBody].shape.a_inerti * 0.5);
                 }
 
 
@@ -179,33 +179,33 @@ void World :: process(float dTime)
                     power= max( power, 0.f);
 
                     // Position :
-                    a_body[iBody].shape.getPosition()-= between * dist;
+                    a_body[iBody].shape.setPosition(a_body[iBody].shape.getPosition() - between * dist);
 
                     // Speed :
-                    a_body[iBody].shape.getVitesse()-= between * power * 1.5; //(1.f + a_body[iBody].shape.a_inerti);
+                    a_body[iBody].shape.setVitesse(a_body[iBody].shape.getPosition() - between * power * 1.5); //(1.f + a_body[iBody].shape.a_inerti);
                 }
             }
 
         // World limits :
-        if ( a_body[iBody].shape.getPosition().getX() < a_body[iBody].shape.getAngle() )
+        if ( a_body[iBody].shape.getPosition().x < a_body[iBody].shape.getRayon() )
         {
-            a_body[iBody].shape.getPosition().setX(a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getPosition().setX(a_body[iBody].shape.getRayon());
             a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().getX() > ( (float)worldSize.x - a_body[iBody].shape.getAngle() ) )
+        else if ( a_body[iBody].shape.getPosition().x > ( (float)worldSize.x - a_body[iBody].shape.getRayon() ) )
         {
-            a_body[iBody].shape.getPosition().setX((float)worldSize.x - a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getPosition().setX((float)worldSize.x - a_body[iBody].shape.getRayon());
             a_body[iBody].shape.getVitesse().setX(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
-        if ( a_body[iBody].shape.getPosition().getY() < a_body[iBody].shape.getAngle() )
+        if ( a_body[iBody].shape.getPosition().y < a_body[iBody].shape.getRayon() )
         {
-            a_body[iBody].shape.getPosition().setY(a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getPosition().setY(a_body[iBody].shape.getRayon());
             a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
-        else if ( a_body[iBody].shape.getPosition().getY() > ( (float)worldSize.y - a_body[iBody].shape.getAngle() ) )
+        else if ( a_body[iBody].shape.getPosition().y > ( (float)worldSize.y - a_body[iBody].shape.getRayon() ) )
         {
-            a_body[iBody].shape.getPosition().setY((float)worldSize.y - a_body[iBody].shape.getAngle());
+            a_body[iBody].shape.getPosition().setY((float)worldSize.y - a_body[iBody].shape.getRayon());
             a_body[iBody].shape.getVitesse().setY(0.f); //*= -0.5; //a_body[iBody].shape.a_inerti - 1;
         }
 
@@ -220,9 +220,9 @@ int World :: createBody( const ElementDynamique & shape, float pr)
     int idBody= a_body.push( Body(shape, pr) );
 
     if( shape.isMobile() )
-        a_grid[(int)(shape.getPosition().getX())][(int)(shape.getPosition().getY())].a_mobileBody.push_back( idBody );
+        a_grid[(int)(shape.getPosition().x)][(int)(shape.getPosition().y)].a_mobileBody.push_back( idBody );
     else
-        a_grid[(int)(shape.getPosition().getX())][(int)(shape.getPosition().getY())].a_fixedBody.push_back( idBody );
+        a_grid[(int)(shape.getPosition().x)][(int)(shape.getPosition().y)].a_fixedBody.push_back( idBody );
 
     return idBody;
 }
@@ -233,8 +233,7 @@ int World :: createWall(const Point p1, const Point p2, float radius, float rati
     float dist= step.normalize();
     int nbBody= (int)( dist / (radius*ratio) );
     step*= dist / (float)nbBody;
-    ElementDynamique shape(0.f, 0.f, 0.f,p1 + step*0.5f, step.angle(), radius, true, false);
-    //ElementDynamique shape(p1 + step*0.5f, step.angle(), radius, true, false);
+    ElementDynamique shape( p1 + step*0.5f, step.angle(), radius, true, false);
 
     for(int i= 0; i < nbBody; ++i)
     {
