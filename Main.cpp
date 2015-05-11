@@ -9,7 +9,7 @@
 #include <vector>
 
 #include "frame.h"
-#include "Couleur.h"
+#include "color.h"
 #include "world.h"
 #include "control.h"
 #include "tools.h"
