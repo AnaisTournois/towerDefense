@@ -47,6 +47,7 @@ int main(int, char**) {
     
     while (!control.end()) {
             
+        
             control.process(objetsTangibles);
             
             if (!control.pause())
