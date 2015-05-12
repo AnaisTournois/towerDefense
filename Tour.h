@@ -3,17 +3,24 @@
 
 #include <vector>
 
-#include "ElementCombattant.h"
 #include "ElementVisuel.h"
+#include "ElementCombattant.h"
 #include "Joueur.h"
 #include "ObjetTangible.h"
+#include "Point.h"
 
 class Balle;
 class Joueur;
 
 
-class Tour : public ElementCombattant, public ObjetTangible {
+class Tour : public ElementVisuel, public ElementCombattant, public ObjetTangible {
 public:
+    
+    Tour(Point position, float angle, float rayon, bool solide, bool mobile,
+         int pointsDeVie, int attaque, int defense, float frequence):
+            ElementVisuel(position,angle, rayon, solide, mobile), 
+            ElementCombattant(pointsDeVie, attaque, defense, frequence) {
+    }
 
     virtual Balle* tirerBalle() = 0;
 

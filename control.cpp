@@ -35,7 +35,7 @@ a_mouseControl(false) {
 
 //Process function :
 
-void Control::process() {
+void Control::process(vector<ObjetTangible*>* objetsTangibles) {
     SDL_Event event;
     //Pour la détection d'objets tangibles
     int compteur = 0;
@@ -89,8 +89,7 @@ void Control::process() {
     }
     
     if (points.size() != 0){
-        ObjetTangible objetTangible = detecteur.detecterObjetTangible(points);
+        objetsTangibles->push_back(detecteur.detecterObjetTangible(points));
     }
-
 }
 

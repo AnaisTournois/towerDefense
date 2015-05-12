@@ -47,7 +47,7 @@ public:
     virtual bool setPause(bool set){ a_pause= set; }
 
     //Process function :
-    virtual void process();
+    virtual void process(vector<ObjetTangible*>*);
 };
 
 };

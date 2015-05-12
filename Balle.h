@@ -2,11 +2,12 @@
 #define Balle_h
 
 #include "ElementDynamique.h"
-#include "Tour.h"
+//#include "Tour.h"
 
 using namespace std;
 
 class Monstre;
+class Tour;
 
 class Balle : public mia::ElementDynamique{
 

@@ -15,6 +15,8 @@
 #include "Point.h"
 
 #include "ObjetTangible.h"
+#include "TourAttaque.h"
+#include "TourRalentissante.h"
 
 using namespace std;
 
@@ -22,8 +24,9 @@ class DetecteurObjetTangible{
 private:
     
 public:
-    //Si oui, on renvoie l'objet tangible détecté
-    ObjetTangible detecterObjetTangible(std::vector<mia::Point> points);
+    ObjetTangible* detecterObjetTangible(std::vector<mia::Point> points);
+    
+                
     
 };
 
