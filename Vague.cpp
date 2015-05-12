@@ -1,9 +1,9 @@
 #include "Vague.h"
-#include <windows.h>
+//#include <windows.h>
 #include <iostream>
 #include <unistd.h>
-#include <thread>
-#include <chrono>
+//#include <thread>
+//#include <chrono>
 
 Vague::Vague(int niveau) {
     this->niveau = niveau;
@@ -21,7 +21,7 @@ Vague::~Vague() {
 void Vague::lancer() {
     for (unsigned int i = 0; i < monstres.size(); i++) {
         monstres[i]->lancer();
-        Sleep(1000);
+        //Sleep(1000);
     }
 }
 

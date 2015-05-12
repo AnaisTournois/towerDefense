@@ -47,7 +47,11 @@ int main(int, char**) {
     vector<ObjetTangible*>* objetsTangibles = new vector<ObjetTangible*>();
     
     while (!control.end()) {
-            
+        int nbObjetsTangibles = objetsTangibles->size();
+        int objets[nbObjetsTangibles];
+        for (int i=0; i<nbObjetsTangibles; i++){
+            //objets[i] = world.createBody(objetsTangibles->at(i), 3.0f);
+        }
             control.process(objetsTangibles);
             
             if (!control.pause())

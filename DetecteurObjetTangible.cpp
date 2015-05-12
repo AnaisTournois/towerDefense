@@ -6,7 +6,7 @@ ObjetTangible* DetecteurObjetTangible::detecterObjetTangible(std::vector<mia::Po
     switch(points.size()){
         case 1:
             //On crée une tour d'attaque
-            objetTangible = new TourAttaque(points[0], 0.f, 0.8f, true, false, 10, 10, 3, 1.f);
+            objetTangible = new TourAttaque(points, points[0], 0.f, 0.8f, true, false, 10, 10, 3, 1.f);
         break;
         default:
             //On crée une tour ralentissante
@@ -17,7 +17,7 @@ ObjetTangible* DetecteurObjetTangible::detecterObjetTangible(std::vector<mia::Po
             }
             position.x = position.x / points.size();
             position.y = position.y / points.size();
-            objetTangible = new TourRalentissante(position, 0.f, 0.8f, true, false, 10, 3, 10, 1.f);
+            objetTangible = new TourRalentissante(points, position, 0.f, 0.8f, true, false, 10, 3, 10, 1.f);
         break;    
     }
     return objetTangible;

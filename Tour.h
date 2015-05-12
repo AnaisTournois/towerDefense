@@ -13,12 +13,12 @@ class Balle;
 class Joueur;
 
 
-class Tour : public ElementVisuel, public ElementCombattant, public ObjetTangible {
+class Tour : public ElementCombattant, public ObjetTangible {
 public:
     
-    Tour(Point position, float angle, float rayon, bool solide, bool mobile,
+    Tour(vector<Point> points, Point position, float angle, float rayon, bool solide, bool mobile,
          int pointsDeVie, int attaque, int defense, float frequence):
-            ElementVisuel(position,angle, rayon, solide, mobile), 
+            ObjetTangible(points, position,angle, rayon, solide, mobile), 
             ElementCombattant(pointsDeVie, attaque, defense, frequence) {
     }
 

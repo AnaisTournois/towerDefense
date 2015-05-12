@@ -11,19 +11,17 @@
 #include <vector>
 #include <iostream>
 #include "Point.h"
+#include "ElementVisuel.h"
 
 using namespace std;
 
-class ObjetTangible {
+class ObjetTangible :  public ElementVisuel {
 protected:
     vector<mia::Point> points;
 
 public:
-    ObjetTangible();
-    
-    ObjetTangible(vector<mia::Point> pointsObjet){
-        points = pointsObjet;
-    }
+    ObjetTangible(vector<mia::Point> pointsObjet, Point position, float angle, float rayon, bool solide, bool mobile):
+    points(pointsObjet), ElementVisuel(position,angle, rayon, solide, mobile){}
     
     void setPoints(vector<mia::Point> points) {
         this->points = points;

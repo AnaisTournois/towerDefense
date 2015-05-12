@@ -1,8 +1,6 @@
 #include "ObjetTangible.h"
 
-ObjetTangible::ObjetTangible(){
-    std::cout << "objet contruit\n";
-}
+
 
 void ObjetTangible::afficherPoints() const{
     for (int i=0; i< points.size() ; i++){

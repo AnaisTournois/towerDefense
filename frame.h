@@ -101,6 +101,7 @@ public:
     void drawBodies(const World & w);
 
     void drawElementDynamique( const ElementDynamique & bod );
+    void drawElementVisuel( const ElementVisuel & bod );
 };
 
 };

@@ -18,8 +18,6 @@ public:
     bool mobile;
     
 public:
-    ElementVisuel();
-    
     ElementVisuel(const Point& position = 0.f, const float& angle = 0.f, const float& rayon = 0.f, bool solide = true, bool mobile = true);
     
     void setPosition(Point position) {

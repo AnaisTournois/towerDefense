@@ -191,16 +191,24 @@ void Frame :: drawBodies(const World & world)
             patch= world.getPatch(op);
             for ( bodyId= patch->a_mobileBody.begin(); bodyId != patch->a_mobileBody.end(); ++bodyId )
             {
-                ElementDynamique body( world.getBodyShape( *bodyId ) );
-                drawElementDynamique( body );
+                ElementVisuel body( world.getBodyShape( *bodyId ) );
+                drawElementVisuel( body );
             }
 
             for ( bodyId= patch->a_fixedBody.begin(); bodyId != patch->a_fixedBody.end(); bodyId++ )
             {
-                ElementDynamique body( world.getBodyShape( *bodyId ) );
-                drawElementDynamique( body );
+                ElementVisuel body( world.getBodyShape( *bodyId ) );
+                drawElementVisuel( body );
             }
         }
+}
+
+void Frame :: drawElementVisuel( const ElementVisuel & bod )
+{
+    Point orientation( cos(bod.getAngle()), sin(bod.getAngle()) );
+
+    drawCircle( bod.getPosition(), bod.getRayon() );
+    drawLine( bod.getPosition(), bod.getPosition() + orientation * bod.getRayon() );
 }
 
 void Frame :: drawElementDynamique( const ElementDynamique & bod )
