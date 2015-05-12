@@ -9,7 +9,11 @@ class Balle;
 class TourAttaque : public Tour {
 
 public:
-    virtual Balle* tirerBalle();
+    TourAttaque(Point position, float angle, float rayon, bool solide, bool mobile,
+         int pointsDeVie, int attaque, int defense, float frequence):
+         Tour(position,angle, rayon, solide, mobile, pointsDeVie, attaque, defense, frequence){}
+    
+    virtual Balle* tirerBalle(){};
 
 };
 

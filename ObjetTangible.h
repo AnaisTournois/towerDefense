@@ -9,6 +9,7 @@
 #define	OBJETTANGIBLE_H
 
 #include <vector>
+#include <iostream>
 #include "Point.h"
 
 using namespace std;

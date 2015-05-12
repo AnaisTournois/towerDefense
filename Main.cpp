@@ -44,10 +44,11 @@ int main(int, char**) {
     frame.scale(20.f);
     frame.moveTo(Point(10.0f, 10.0f));
 
+    vector<ObjetTangible*>* objetsTangibles = new vector<ObjetTangible*>();
     
     while (!control.end()) {
             
-            control.process();
+            control.process(objetsTangibles);
             
             if (!control.pause())
                 world.process(1.f / 50.f);
