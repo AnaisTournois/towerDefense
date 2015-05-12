@@ -16,8 +16,9 @@ protected:
     Tour* tourLanceuse;
 
 public:
+    Balle(Tour* tourLanceuse, int puissance);
     virtual void toucherMonstre(Monstre* monstre) = 0;
-
+    
     Tour* getTourLanceuse() const {
         return tourLanceuse;
     }

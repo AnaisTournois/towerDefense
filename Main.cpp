@@ -38,7 +38,7 @@ int main(int, char**) {
     for(int i(0); i < nbAgent; ++i )
     {
         Monstre body= Monstre(0, Point( 1.0f, 10.f ), 0.f, 0.2);
-        agent[i]= world.createBody(body, 3.0f );
+        /*agent[i]= */world.createBody(body, 3.0f );
     }
 
     frame.scale(20.f);
