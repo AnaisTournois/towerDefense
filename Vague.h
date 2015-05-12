@@ -9,11 +9,14 @@ using namespace std;
 class Vague {
 
  public:
+    Vague(int niveau);
+    ~Vague();
     virtual void lancer();
-     void setMonstres(vector<Monstre*> monstres);
-     vector<Monstre*> getMonstres() const;
-     void setNiveau(int niveau);
-     int getNiveau() const;
+    void ajouterMonstre(Monstre* monstre);
+    void setMonstres(vector<Monstre*> monstres);
+    vector<Monstre*> getMonstres() const;
+    void setNiveau(int niveau);
+    int getNiveau() const;
 
 
  protected:
