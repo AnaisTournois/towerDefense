@@ -7,32 +7,13 @@ Monstre::Monstre(
         const int pointsDeVie, const int attaque, const int defense, const float frequence):
     mia::ElementDynamique(position, angle, rayon, solide, mobile, vitesse, rotation, echelle),
     ElementCombattant(pointsDeVie, attaque, defense, frequence),
-    cheminSuivi(cheminSuivi)
-{
+    cheminSuivi(cheminSuivi) {
+    
 }
 
-//ElementDynamique::ElementDynamique ( const ElementDynamique& elementDynamique ):
-//    position(elementDynamique.position), angle(elementDynamique.angle), rayon(elementDynamique.rayon),
-//    solide(elementDynamique.solide), mobile(elementDynamique.mobile),
-//    vitesse(elementDynamique.vitesse), rotation(elementDynamique.rotation), echelle(elementDynamique.echelle)
-//{
-//}
-///// Assignement :
-/////--------------
-//const ElementDynamique & ElementDynamique::operator=(const ElementDynamique& elementDynamique) {
-//    position = elementDynamique.position;
-//    angle = elementDynamique.angle;
-//    rayon = elementDynamique.rayon;
-//    
-//    solide = elementDynamique.solide;
-//    mobile = elementDynamique.mobile;
-//
-//    vitesse = elementDynamique.vitesse;
-//    rotation = elementDynamique.rotation;
-//    echelle = elementDynamique.echelle;
-//
-//    return *this;
-//}
+void Monstre::lancer() {
+    
+}
 
 
 void Monstre::avancerUnPas() {

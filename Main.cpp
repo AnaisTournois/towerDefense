@@ -17,6 +17,7 @@
 #include "Point.h"
 #include "DetecteurObjetTangible.h"
 #include "ObjetTangible.h"
+#include "Monstre.h"
 
 class DetecteurObjetTangible;
 
@@ -32,15 +33,15 @@ int main(int, char**) {
     //-----------------------
     world.initialize(Int2(20, 20));
 
-    int nbAgent(120), agent[nbAgent];
+    int nbAgent(1), agent[nbAgent];
     for(int i(0); i < nbAgent; ++i )
     {
-        ElementDynamique body= ElementDynamique( Point( randomFloat()*20.0f, randomFloat()*20.0f ), reduceRadian(randomFloat()*_2PI), 0.2);
-        body.setVitesse(Point( cos(body.getAngle()), sin(body.getAngle()) )* 3.f);
+        Monstre body= Monstre(0, Point( 1.0f, 10.f ), 0.f, 0.2);
+        body.setVitesse(Point( 5.f, 0.f));
         agent[i]= world.createBody(body, 3.0f );
     }
 
-    frame.scale(10.f);
+    frame.scale(20.f);
     frame.moveTo(Point(10.0f, 10.0f));
 
     
@@ -52,7 +53,7 @@ int main(int, char**) {
                 world.process(1.f / 50.f);
 
             frame.refresh();
-            frame.drawGrid(world);
+//            frame.drawGrid(world);
             frame.drawBodies(world);
 
             SDL_Delay(50);
