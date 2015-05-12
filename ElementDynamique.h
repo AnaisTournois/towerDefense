@@ -6,6 +6,7 @@
 
 using namespace std;
 using namespace mia;
+
 namespace mia {
 
 class ElementDynamique : public ElementVisuel {
@@ -23,7 +24,7 @@ public:
                      const Point& vitesse = 0.f, const float& rotation = 0.f, const float& echelle = 0.f);
     
     ElementDynamique(ObjetTangible* objetTangible);
-
+    
     // Assignation :
     //--------------
 //    virtual const ElementDynamique &operator=( const ElementDynamique& elementDynamique );

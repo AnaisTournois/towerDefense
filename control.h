@@ -48,6 +48,7 @@ public:
 
     //Process function :
     virtual void process(vector<ObjetTangible*>*);
+    
 };
 
 };

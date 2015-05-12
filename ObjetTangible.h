@@ -13,7 +13,12 @@
 #include "Point.h"
 #include "ElementVisuel.h"
 
+
 using namespace std;
+
+namespace mia{
+    class World;
+} 
 
 class ObjetTangible :  public ElementVisuel {
 protected:
@@ -32,6 +37,8 @@ public:
     }
     
     void afficherPoints() const;
+    
+    virtual void tirerBalle(mia::World* monde){};
     
 };
 

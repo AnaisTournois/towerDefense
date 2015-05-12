@@ -8,10 +8,11 @@
 #include "Joueur.h"
 #include "ObjetTangible.h"
 #include "Point.h"
+#include "world.h"
 
 class Balle;
 class Joueur;
-
+//class World;
 
 class Tour : public ElementCombattant, public ObjetTangible {
 public:
@@ -21,8 +22,6 @@ public:
             ObjetTangible(points, position,angle, rayon, solide, mobile), 
             ElementCombattant(pointsDeVie, attaque, defense, frequence) {
     }
-
-    virtual Balle* tirerBalle() = 0;
 
     void setProprietaire(Joueur* proprietaire) {
         this->proprietaire = proprietaire;
@@ -39,6 +38,8 @@ public:
     int getPrix() const {
         return prix;
     }
+    
+    virtual void tirerBalle(mia::World* monde){}
 
 protected:
     int prix;

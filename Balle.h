@@ -16,8 +16,12 @@ protected:
     Tour* tourLanceuse;
 
 public:
-    Balle(Tour* tourLanceuse, int puissance);
-    virtual void toucherMonstre(Monstre* monstre) = 0;
+    Balle(Tour* tourLanceuse, int puissance, const Point& position = 0.f, const float& angle = 0.f, const float& rayon = 0.f, bool solide = true, bool mobile = true,
+                     const Point& vitesse = 0.f, const float& rotation = 0.f, const float& echelle = 0.f);
+    
+    ElementDynamique castElement();
+    
+    virtual void toucherMonstre(Monstre* monstre) {};
     
     Tour* getTourLanceuse() const {
         return tourLanceuse;

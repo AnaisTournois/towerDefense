@@ -24,9 +24,17 @@ class DetecteurObjetTangible{
 private:
     
 public:
-    ObjetTangible* detecterObjetTangible(std::vector<mia::Point> points);
+    ObjetTangible* detecterObjetTangible(std::vector<mia::Point> points, World* monde);
+    World* monde;
     
-                
+    
+    void setMonde(World* monde) {
+        this->monde = monde;
+    }
+
+    World* getMonde() const {
+        return monde;
+    }
     
 };
 

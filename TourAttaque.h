@@ -13,7 +13,7 @@ public:
          int pointsDeVie, int attaque, int defense, float frequence):
          Tour(points, position,angle, rayon, solide, mobile, pointsDeVie, attaque, defense, frequence){}
     
-    virtual Balle* tirerBalle();
+    virtual void tirerBalle(mia::World* monde);
 
 };
 

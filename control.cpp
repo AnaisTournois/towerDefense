@@ -32,7 +32,6 @@ a_mouseControl(false) {
 
 }
 
-
 //Process function :
 
 void Control::process(vector<ObjetTangible*>* objetsTangibles) {
@@ -43,7 +42,7 @@ void Control::process(vector<ObjetTangible*>* objetsTangibles) {
 
     Color white( 255, 255, 255 );
 
-    Int2 mouseMove(0, 0);
+//    Int2 mouseMove(0, 0);
     while (SDL_PollEvent(&event)) {
         a_end = a_end || event.type == SDL_QUIT;
 
@@ -89,7 +88,7 @@ void Control::process(vector<ObjetTangible*>* objetsTangibles) {
 //    }
     
     if (points.size() != 0){
-        objetsTangibles->push_back(detecteur.detecterObjetTangible(points));
+        objetsTangibles->push_back(detecteur.detecterObjetTangible(points, a_target));
     }
 }
 
