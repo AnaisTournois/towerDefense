@@ -7,8 +7,7 @@
 using namespace std;
 
 class Vague {
-
- public:
+public:
     Vague(int niveau);
     ~Vague();
     virtual void lancer();
@@ -19,7 +18,7 @@ class Vague {
     int getNiveau() const;
 
 
- protected:
+protected:
     int niveau;
     vector< Monstre* > monstres;
 };

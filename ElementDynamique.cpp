@@ -29,6 +29,13 @@ ElementDynamique::ElementDynamique(const Point& position, const float& angle, co
             vitesse(vitesse), rotation(rotation), echelle(echelle) {
 }
 
+ElementDynamique::ElementDynamique(ObjetTangible* objetTangible):
+    ElementVisuel(objetTangible->position, objetTangible->angle, objetTangible->rayon, objetTangible->solide, objetTangible->mobile),
+    vitesse(0.f), rotation(0.f), echelle(0.f){
+    
+}
+
+
 bool ElementDynamique::operator==( const ElementDynamique& elementDynamique ) {
     return ( this == &elementDynamique );
 }

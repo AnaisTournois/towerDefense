@@ -33,11 +33,11 @@ int main(int, char**) {
     //-----------------------
     world.initialize(Int2(20, 20));
 
-    int nbAgent(1), agent[nbAgent];
+    int agent[100];
+    int nbAgent(1);
     for(int i(0); i < nbAgent; ++i )
     {
         Monstre body= Monstre(0, Point( 1.0f, 10.f ), 0.f, 0.2);
-        body.setVitesse(Point( 5.f, 0.f));
         agent[i]= world.createBody(body, 3.0f );
     }
 
@@ -45,23 +45,22 @@ int main(int, char**) {
     frame.moveTo(Point(10.0f, 10.0f));
 
     vector<ObjetTangible*>* objetsTangibles = new vector<ObjetTangible*>();
-    
     while (!control.end()) {
-        int nbObjetsTangibles = objetsTangibles->size();
-        int objets[nbObjetsTangibles];
-        for (int i=0; i<nbObjetsTangibles; i++){
-            //objets[i] = world.createBody(objetsTangibles->at(i), 3.0f);
-        }
-            control.process(objetsTangibles);
-            
-            if (!control.pause())
-                world.process(1.f / 50.f);
+        int lastSize = objetsTangibles->size();
+        
+        control.process(objetsTangibles);
 
-            frame.refresh();
-//            frame.drawGrid(world);
-            frame.drawBodies(world);
+        if (lastSize < objetsTangibles->size()) {
+            agent[lastSize+nbAgent] = world.createBody((ElementDynamique) objetsTangibles->at(lastSize), 3.f);
+        } 
+        if (!control.pause())
+            world.process(1.f / 50.f);
 
-            SDL_Delay(50);
+        frame.refresh();
+//        frame.drawGrid(world);
+        frame.drawBodies(world);
+
+        SDL_Delay(50);
     }
 
     std::cout << "cool !!!" << std::endl;

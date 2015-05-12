@@ -2,6 +2,7 @@
 #define ElementDynamique_h
 
 #include "ElementVisuel.h"
+#include "ObjetTangible.h"
 
 using namespace std;
 using namespace mia;
@@ -20,6 +21,8 @@ public:
     ///--------------------------
     ElementDynamique(const Point& position = 0.f, const float& angle = 0.f, const float& rayon = 0.f, bool solide = true, bool mobile = true,
                      const Point& vitesse = 0.f, const float& rotation = 0.f, const float& echelle = 0.f);
+    
+    ElementDynamique(ObjetTangible* objetTangible);
 
     // Assignation :
     //--------------

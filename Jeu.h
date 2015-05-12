@@ -11,12 +11,14 @@ using namespace std;
 class Jeu {
 protected:
     bool etat;
-    
+
 public:
     vector<Joueur*> joueurs;
     vector<Vague*> vagues;
-    
+
 public:
+    Jeu(int nombreJoueurs);
+    ~Jeu();
     virtual void lancer();
     virtual void arreter();
     virtual void terminer();
@@ -25,7 +27,7 @@ public:
     void setJoueurs(vector<Joueur*> joueurs);
     vector<Joueur*> getJoueurs() const;
     void setEtat(bool etat);
-    bool isEtat() const;
+    bool getEtat() const;
     ObjetTangible* detecterObjetTangible();
 
 
