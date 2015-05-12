@@ -50,17 +50,17 @@ void Control::process(vector<ObjetTangible*>* objetsTangibles) {
         if (event.type == SDL_KEYDOWN && (event.key.keysym.sym == SDLK_PAUSE))
             a_pause = !a_pause;
 
-        a_mouseControl = a_mouseControl || (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT);
-        a_mouseControl = a_mouseControl && !(event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT);
-
-        if (event.type == SDL_MOUSEWHEEL) {
-            if (event.wheel.y < 0)
-                a_frame->scaleOut();
-            else a_frame->scaleIn();
-        } else if (event.type == SDL_MOUSEMOTION) {
-            mouseMove.x += event.motion.xrel;
-            mouseMove.y += event.motion.yrel;
-        }
+//        a_mouseControl = a_mouseControl || (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT);
+//        a_mouseControl = a_mouseControl && !(event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT);
+//
+//        if (event.type == SDL_MOUSEWHEEL) {
+//            if (event.wheel.y < 0)
+//                a_frame->scaleOut();
+//            else a_frame->scaleIn();
+//        } else if (event.type == SDL_MOUSEMOTION) {
+//            mouseMove.x += event.motion.xrel;
+//            mouseMove.y += event.motion.yrel;
+//        }
 
         switch (event.type) {
             case SDL_FINGERDOWN:
@@ -83,10 +83,10 @@ void Control::process(vector<ObjetTangible*>* objetsTangibles) {
         }
     }
 
-    if (a_mouseControl && mouseMove != Int2(0, 0)) {
-        mouseMove *= -1;
-        a_frame->movePixel(mouseMove);
-    }
+//    if (a_mouseControl && mouseMove != Int2(0, 0)) {
+//        mouseMove *= -1;
+//        a_frame->movePixel(mouseMove);
+//    }
     
     if (points.size() != 0){
         objetsTangibles->push_back(detecteur.detecterObjetTangible(points));

@@ -31,7 +31,7 @@ int main(int, char**) {
 
     // World initialization :
     //-----------------------
-    world.initialize(Int2(20, 20));
+    world.initialize(Int2(64, 33));
 
     int agent[100];
     int nbAgent(1);
@@ -42,7 +42,7 @@ int main(int, char**) {
     }
 
     frame.scale(20.f);
-    frame.moveTo(Point(10.0f, 10.0f));
+    frame.moveTo(Point(32.f, 16.5f));
 
     vector<ObjetTangible*>* objetsTangibles = new vector<ObjetTangible*>();
     while (!control.end()) {
